@@ -11,17 +11,20 @@
     --body-font: Arial, Helvetica, sans-serif;
 }
 
+/* Reset CSS box-model properties */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Style body text using --body-font */
 body {
     font-family: var(--body-font);
     color: #333333;
 }
 
+/* Limit page width to 840px and center alignment */
 header,
 main,
 footer {
@@ -29,6 +32,7 @@ footer {
     margin: 0 auto;
 }
 
+/* Header layout - Left aligned logo & vertical nav */
 header {
     padding: 10px 0;
 }
@@ -45,17 +49,20 @@ header nav {
     flex-direction: column;
 }
 
+/* Navigation links using --primary-color */
 header nav a {
-    color: #4a3b8c;
+    color: var(--primary-color);
     text-decoration: none;
     font-size: 0.9rem;
     margin-bottom: 4px;
 }
 
 header nav a:hover {
+    color: var(--secondary-color);
     text-decoration: underline;
 }
 
+/* Headings font styling using --heading-font */
 h1,
 h2,
 h3 {
@@ -74,11 +81,12 @@ section p {
     color: #333333;
 }
 
+/* Section headings using --accent1-color and --accent2-color */
 h2 {
     background-color: var(--accent1-color);
-    /* Dark slate blue fill */
-    color: #ffffff;
-    /* White text */
+    /* Dark slate blue banner */
+    color: var(--accent2-color);
+    /* Golden yellow heading text */
     text-align: center;
     padding: 12px 10px;
     font-size: 1.5rem;
@@ -99,6 +107,7 @@ h2 {
     height: auto;
 }
 
+/* Top Banner Title inside Hero using --accent2-color */
 h1 {
     position: absolute;
     top: 20px;
@@ -107,24 +116,25 @@ h1 {
     padding: 12px 0;
     text-align: center;
     background-color: rgba(26, 54, 93, 0.75);
-    color: #ffffff;
+    color: var(--accent2-color);
     font-size: 2rem;
 }
 
-/* Bottom Overlay Card inside Hero */
+/* Bottom Overlay Card inside Hero using --secondary-color */
 .hero article {
     position: absolute;
     bottom: 25px;
     left: 20px;
     right: 20px;
     background-color: rgba(26, 54, 93, 0.85);
+    border-left: 4px solid var(--secondary-color);
     padding: 15px 20px;
     color: #ffffff;
 }
 
 .hero article h3 {
     font-size: 1rem;
-    color: #ffffff;
+    color: var(--accent2-color);
     margin-top: 8px;
     margin-bottom: 4px;
 }
