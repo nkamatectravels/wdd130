@@ -1,0 +1,180 @@
+:root {
+    --primary-color: #055a05;
+    /* forest green */
+    --secondary-color: #f4a261;
+    /* warm sand */
+    --accent1-color: #1a365d;
+    /* dark slate blue */
+    --accent2-color: #e9c46a;
+    /* light golden yellow */
+    --heading-font: "Times New Roman", "Georgia", serif;
+    --body-font: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    color: #333333;
+}
+
+header,
+main,
+footer {
+    width: 840px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 10px 0;
+}
+
+header .logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+}
+
+header nav {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header nav a {
+    color: #4a3b8c;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--heading-font);
+}
+
+/* Section styling */
+section {
+    margin: 25px 0;
+}
+
+section p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-top: 12px;
+    color: #333333;
+}
+
+h2 {
+    background-color: var(--accent1-color);
+    /* Dark slate blue fill */
+    color: #ffffff;
+    /* White text */
+    text-align: center;
+    padding: 12px 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 100%;
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+}
+
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    background-color: rgba(26, 54, 93, 0.75);
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+/* Bottom Overlay Card inside Hero */
+.hero article {
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+    right: 20px;
+    background-color: rgba(26, 54, 93, 0.85);
+    padding: 15px 20px;
+    color: #ffffff;
+}
+
+.hero article h3 {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-top: 8px;
+    margin-bottom: 4px;
+}
+
+.hero article h3:first-of-type {
+    margin-top: 0;
+}
+
+.hero article p {
+    color: #ffffff;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+.hero article img {
+    float: right;
+    width: 120px;
+    height: 85px;
+    object-fit: cover;
+    margin-left: 15px;
+    margin-bottom: 8px;
+    border: 1px solid #ffffff;
+}
+
+/* Footer layout */
+footer {
+    border-top: 1px solid #e0e0e0;
+    padding: 15px 0;
+    margin-top: 25px;
+}
+
+footer p {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+/* Social media icon sizing & alignment */
+.socialmedia {
+    display: flex;
+    gap: 10px;
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
+
+.socialmedia img {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
