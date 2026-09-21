@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #055a05;
-    /* forest green */
+    --primary-color: #000080;
+    /* navy blue for links */
     --secondary-color: #f4a261;
     /* warm sand */
     --accent1-color: #1a365d;
@@ -18,13 +18,14 @@
     box-sizing: border-box;
 }
 
-/* Style body text using --body-font */
+/* Global Body Styling */
 body {
     font-family: var(--body-font);
     color: #333333;
+    background-color: #ffffff;
 }
 
-/* Limit page width to 840px and center alignment */
+/* Page Container Width Limit */
 header,
 main,
 footer {
@@ -32,29 +33,48 @@ footer {
     margin: 0 auto;
 }
 
-/* Header layout - Left aligned logo & vertical nav */
+/* ================= HEADER (CLEAN HORIZONTAL LAYOUT) ================= */
 header {
-    padding: 10px 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 0;
+    border-bottom: 1px solid #e0e0e0;
+    /* Subtle bottom divider line */
+}
+
+/* Logo container aligning image and text horizontally */
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 header .logo img {
-    width: 120px;
-    height: auto;
+    height: 50px;
+    width: auto;
     display: block;
 }
 
+/* Horizontal Navigation Links */
 header nav {
-    margin: 10px 0;
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    /* Spacing between menu items */
 }
 
-/* Navigation links using --primary-color */
 header nav a {
     color: var(--primary-color);
     text-decoration: none;
-    font-size: 0.9rem;
-    margin-bottom: 4px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    padding: 0;
+    transition: color 0.2s ease;
 }
 
 header nav a:hover {
@@ -62,43 +82,39 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-/* Headings font styling using --heading-font */
+/* ================= HEADINGS ================= */
 h1,
 h2,
 h3 {
     font-family: var(--heading-font);
 }
 
-/* Section styling */
-section {
+/* Page title centered directly below header */
+main h1.page-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
     margin: 25px 0;
+    color: #000000;
 }
 
-section p {
-    font-size: 0.88rem;
-    line-height: 1.5;
-    margin-top: 12px;
-    color: #333333;
-}
-
-/* Section headings using --accent1-color and --accent2-color */
 h2 {
     background-color: var(--accent1-color);
-    /* Dark slate blue banner */
     color: var(--accent2-color);
-    /* Golden yellow heading text */
     text-align: center;
     padding: 12px 10px;
     font-size: 1.5rem;
     font-weight: bold;
     width: 100%;
     display: block;
+    margin-bottom: 15px;
 }
 
-/* Hero Section */
+/* ================= HERO SECTION ================= */
 .hero {
     position: relative;
     width: 100%;
+    margin-bottom: 25px;
 }
 
 .hero img {
@@ -107,8 +123,7 @@ h2 {
     height: auto;
 }
 
-/* Top Banner Title inside Hero using --accent2-color */
-h1 {
+.hero h1 {
     position: absolute;
     top: 20px;
     left: 0;
@@ -120,7 +135,6 @@ h1 {
     font-size: 2rem;
 }
 
-/* Bottom Overlay Card inside Hero using --secondary-color */
 .hero article {
     position: absolute;
     bottom: 25px;
@@ -135,8 +149,8 @@ h1 {
 .hero article h3 {
     font-size: 1rem;
     color: var(--accent2-color);
-    margin-top: 8px;
-    margin-bottom: 4px;
+    margin-top: 6px;
+    margin-bottom: 3px;
 }
 
 .hero article h3:first-of-type {
@@ -147,36 +161,105 @@ h1 {
     color: #ffffff;
     font-size: 0.82rem;
     line-height: 1.4;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .hero article img {
     float: right;
-    width: 120px;
-    height: 85px;
+    width: 110px;
+    height: 80px;
     object-fit: cover;
     margin-left: 15px;
-    margin-bottom: 8px;
     border: 1px solid #ffffff;
 }
 
-/* Footer layout */
+/* ================= HISTORY SECTION (3-COLUMN GRID) ================= */
+.history-grid {
+    margin-bottom: 25px;
+    display: grid;
+    grid-template-columns: 1fr 220px 1fr;
+    grid-template-rows: auto auto;
+    gap: 15px;
+    align-items: center;
+}
+
+.history-grid h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+.history-left p,
+.history-right p {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #333333;
+}
+
+.history-img-container img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid #000000;
+}
+
+/* ================= ADVENTURE SECTION (5 HORIZONTAL FIGURES) ================= */
+.adventure-section {
+    margin-bottom: 25px;
+}
+
+.adventures-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.adventures-container figure {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+}
+
+.adventures-container img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.adventures-container figcaption {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--accent1-color);
+    text-align: center;
+}
+
+/* ================= FOOTER SECTION ================= */
 footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
     border-top: 1px solid #e0e0e0;
-    padding: 15px 0;
+    padding: 20px 0;
     margin-top: 25px;
 }
 
 footer p {
     font-size: 0.85rem;
-    margin-bottom: 10px;
     color: #333333;
+    margin: 0;
 }
 
-/* Social media icon sizing & alignment */
 .socialmedia {
     display: flex;
-    gap: 10px;
+    gap: 12px;
 }
 
 .socialmedia a {
@@ -184,7 +267,7 @@ footer p {
 }
 
 .socialmedia img {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     display: block;
 }
