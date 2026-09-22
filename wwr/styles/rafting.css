@@ -81,8 +81,7 @@ header nav a:hover {
 
 /* ================= HEADINGS ================= */
 h1,
-h2,
-h3 {
+h2 {
     font-family: var(--heading-font);
 }
 
